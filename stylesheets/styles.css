@@ -63,8 +63,9 @@ a:hover small {
 }
 
 .wrapper {
-  width:860px;
+  width:920px;
   margin:0 auto;
+  position:relative;
 }
 
 blockquote {
@@ -110,84 +111,41 @@ th {
 img {
   max-width:100%;
 }
-
-header {
-  width:270px;
-  height: 100%;
-  float:left;
-  position:fixed;
+.rightcol {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 270px; /* Set the width of the sidebar */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  padding-left:20px;
+  float:right;
   overflow-y: scroll;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
-header::-webkit-scrollbar {
+.leftcol {
+  right: 50%;
+  padding-right:20px;
+  width:600px;
+  float:left;
+  padding-bottom:50px;
+  border-right: 1px #e5e5e5 solid;
+
+}
+
+.rightcol::-webkit-scrollbar {
 width: 0px; /* remove scrollbar space */
 }
 
-header ul {
+.rightcol ul {
   list-style:none;
   height:40px;
   padding:0;
-  background: #f4f4f4;
-  border-radius:5px;
-  border:1px solid #e0e0e0;
-  width:270px;
+
 }
 
-header li {
-  width:89px;
-  float:left;
-  border-right:1px solid #e0e0e0;
-  height:40px;
-}
-
-header li:first-child a {
-  border-radius:5px 0 0 5px;
-}
-
-header li:last-child a {
-  border-radius:0 5px 5px 0;
-}
-
-header ul a {
-  line-height:1;
-  font-size:11px;
-  color:#999;
-  display:block;
-  text-align:center;
-  padding-top:6px;
-  height:34px;
-}
-
-header ul a:hover {
-  color:#999;
-}
-
-header ul a:active {
-  background-color:#f0f0f0;
-}
-
-strong {
-  color:#222;
-  font-weight:500;
-}
-
-header ul li + li + li {
-  border-right:none;
-  width:89px;
-}
-
-header ul a strong {
-  font-size:14px;
-  display:block;
-  color:#222;
-}
-
-section {
-  width:500px;
-  float:right;
-  padding-bottom:50px;
-}
 
 small {
   font-size:11px;
@@ -215,32 +173,25 @@ footer {
     margin:0;
   }
 
-  header, section, footer {
+  .rightcol, .leftcol, footer {
     float:none;
-    position:static;
     width:auto;
+    position:static;
   }
 
-  header {
-    padding-right:320px;
-  }
 
-  section {
+
+  .leftcol {
     border:1px solid #e5e5e5;
     border-width:1px 0;
     padding:20px 0;
     margin:0 0 20px;
   }
 
-  header a small {
+  .rightcol a small {
     display:inline;
   }
 
-  header ul {
-    position:absolute;
-    right:50px;
-    top:52px;
-  }
 }
 
 @media print, screen and (max-width: 720px) {
@@ -248,11 +199,11 @@ footer {
     word-wrap:break-word;
   }
 
-  header {
+  .rightcol {
     padding:0;
   }
 
-  header ul, header p.view {
+  .rightcol ul, .rightcol p.view {
     position:static;
   }
 
@@ -266,13 +217,21 @@ footer {
     padding:15px;
   }
 
-  header ul {
+  .rightcol ul {
     width:99%;
   }
 
-  header li, header ul li + li + li {
-    width:33%;
+  .rightcol li, .rightcol ul li + li + li {
+    width:99%;
   }
+  
+}
+
+@media print, screen and (max-width: 420px) {
+  .leftcol {
+  	width:320px;
+  }
+  
 }
 
 @media print {
@@ -298,6 +257,30 @@ footer {
 }
 
 .news {
-  height: 150px;
+  height: 300px;
   overflow-y: scroll;
+}
+
+.line-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-top: 1px; /* Allows for hr margin to start at top of h2 */
+}
+
+/* clearfix for floats */
+.line-title:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.line-title span {
+    padding-right: 15px;
+    float: left;
+}
+
+.line-title hr {
+    border:1px solid #DDD;
+    border-width: 1px 0 0 0;
+    margin-top: 11px;
 }
