@@ -63,7 +63,7 @@ a:hover small {
 }
 
 .wrapper {
-  width:920px;
+  width:1050px;
   margin:0 auto;
   position:relative;
 }
@@ -113,7 +113,7 @@ img {
 }
 .rightcol {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 270px; /* Set the width of the sidebar */
+  width: 400px; /* Set the width of the sidebar */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   right: 0;
@@ -283,4 +283,13 @@ footer {
     border:1px solid #DDD;
     border-width: 1px 0 0 0;
     margin-top: 11px;
+}
+
+.medium-widget {
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+	height: 300px;
+	overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-font-smoothing:subpixel-antialiased;
 }
